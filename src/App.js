@@ -7,7 +7,7 @@ function App() {
   const [exercise, setExercise] = useState('');
 
   const getDate = async () => {
-    const resalt = await fetch(`http://www.boredapi.com/api/activity/`);
+    const resalt = await fetch(`https://www.boredapi.com/api/activity/`);
     const res = await resalt.json();
     setExercise(res.activity);
   };
