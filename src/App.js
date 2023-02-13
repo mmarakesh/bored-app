@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
 
@@ -6,11 +6,11 @@ import './App.css';
 function App() {
   const [exercise, setExercise] = useState('');
 
-  const getDate = async () => {
+  const getDate = useCallback (async () => {
     const resalt = await fetch(`https://www.boredapi.com/api/activity/`);
     const res = await resalt.json();
     setExercise(res.activity);
-  };
+  });
 
   useEffect(() => {
   getDate();
